@@ -168,7 +168,7 @@ def get_car(logcan, sendcan):
 
   if candidate is None:
     cloudlog.warning("car doesn't match any fingerprints: %r", fingerprints)
-    candidate = "mock"
+    candidate = "HYUNDAI KONA 2019"
 
   selected_car = Params().get("SelectedCar")
   if selected_car:
