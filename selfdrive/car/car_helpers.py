@@ -176,7 +176,7 @@ def get_car(logcan, sendcan):
 
   if candidate is None:
     cloudlog.warning("car doesn't match any fingerprints: %r", fingerprints)
-    candidate = "mock"
+    candidate = "HYUNDAI KONA 2019"
 
   disable_radar = Params().get_bool("DisableRadar")
 
