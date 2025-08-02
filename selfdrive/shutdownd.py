@@ -6,8 +6,7 @@ import cereal.messaging as messaging
 
 
 def main():
-
-  shutdown_at = 3 * 10
+  shutdown_at = 0  # 종료 방지
   shutdown_count = 0
   device_state_sock = messaging.sub_sock('deviceState')
 
@@ -21,11 +20,11 @@ def main():
 
       print('current', shutdown_count, 'shutdown_at', shutdown_at)
 
-      if shutdown_count >= shutdown_at > 0:
-        os.system('LD_LIBRARY_PATH="" svc power shutdown')
+      # 종료 조건 제거
+      if shutdown_at > 0 and shutdown_count >= shutdown_at:
+        pass  # 또는 주석 처리된 shutdown 명령
 
     time.sleep(5)
-
 
 if __name__ == "__main__":
   main()
